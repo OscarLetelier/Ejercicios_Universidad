@@ -1,0 +1,4 @@
+/*
+Escribe una funcion que tome dos numeros como argumentos y devuelva su suma.
+Llama a la funcion y muestra el resultado
+*/

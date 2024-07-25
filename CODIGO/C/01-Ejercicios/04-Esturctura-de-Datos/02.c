@@ -1,0 +1,4 @@
+/*
+Cree un programa que recorra una lista de numeros y sume todos 
+sus elementos. Imprima el resultado.
+*/
