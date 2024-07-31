@@ -3,11 +3,34 @@ de tres numeros*/
 
 #include <stdio.h>
 
-int numOne = 1;
-int numTwo = 2;
-int numTree = 3;
+int main() {
+    int num1, num2, num3;
 
-int main () {
-    printf("El numero mayor de la siguiente lista. 1. = 1\n 2. = 2\n 3. =3\n");
-    
+    // Pedir al usuario que introduzca los tres números
+    printf("Introduce el primer numero: ");
+    scanf("%d", &num1);
+
+    printf("Introduce el segundo numero: ");
+    scanf("%d", &num2);
+
+    printf("Introduce el tercer numero: ");
+    scanf("%d", &num3);
+
+    // Inicializar la variable mayor con el primer número
+    int mayor = num1;
+
+    // Comparar con el segundo número
+    if (num2 > mayor) {
+        mayor = num2;
+    }
+
+    // Comparar con el tercer número
+    if (num3 > mayor) {
+        mayor = num3;
+    }
+
+    // Imprimir el mayor de los tres números
+    printf("El mayor de los tres números es: %d\n", mayor);
+
+    return 0;
 }
