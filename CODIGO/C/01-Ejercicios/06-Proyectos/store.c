@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
-//Constante - Maximo de Articulos a Almacenar
+//Constante - Maximo de Articulos a Almacenar.
 #define MAX_ARTICULOS 50
 
-//Estructura para los articulos
+//Estructura para los articulos.
 typedef struct
 {
     char nombre[50];
@@ -12,7 +12,7 @@ typedef struct
     float valor;
 } Articulo;
 
-//Arreglos Globales para almacenar los articulos de cada Tipo
+//Arreglos Globales para almacenar los articulos.
 Articulo articulosArte[MAX_ARTICULOS];
 Articulo articulosEscolares[MAX_ARTICULOS];
 Articulo articulosInfantiles[MAX_ARTICULOS];
@@ -24,7 +24,7 @@ int contadorEscolares = 0;
 int contadorInfantiles = 0;
 int contadorOficina = 0;
 
-//Declaración de Funciones
+//Declaración de Funciones.
 void menu();
 void registro();
 void listarInventario();
@@ -40,6 +40,10 @@ int main ()
 
 //Funciones
 //Funcion Menu Principal
+/*
+Esta función cumple con el objetivo de mostrar al usuario 
+las opciones que presenta para ejecutar el programa.
+*/
 void menu()
 {
     int i;
@@ -78,6 +82,10 @@ void menu()
 }
 
 //Funcion de Registro
+/*
+Esta funcion cumple con el objetivo de registrar el inventario que desea el usuario
+y almacenarlo dentro de un arreglo.
+*/
 void registro()
 {
     printf("Indique el Numero de Identificador del Articulo que desea Registrar. \n");
@@ -185,6 +193,10 @@ void registro()
 }
 
 //Funcion de Listar Inventario
+/*
+Esta función cumple con el objetivo de listar el inventario actual que cuenta el programa.
+de cada uno de los productos registrados.
+*/
 void listarInventario()
 {
     printf("Este es el listado actual de inventario de productos \n");
@@ -218,6 +230,10 @@ void listarInventario()
 }
 
 //Funcion Para modificar el inventario actual
+/*
+Esta función cumple con el objetivo de poder modificar el inventario creado dentro del programa
+en caso de haber registrado mal, la cantidad total o el valor total de los productos.
+*/
 void modificarInventario() 
 {
     int tipo, indice;
