@@ -47,7 +47,7 @@ las opciones que presenta para ejecutar el programa.
 void menu()
 {
     int i;
-    printf("Bienvenidos al Sistema de Registro de Inventario. \n");
+    printf("Bienvenidos al Sistema de Libreria. \n");
     printf("Este Sistema cuenta con las siguientes Funciones. \n");
     do
     {
