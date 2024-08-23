@@ -9,11 +9,10 @@ Una funcion que permita borrar los datos del archivo.
 #include <stdio.h>
 #include <string.h>
 
-//Constante Para las asignaturas
-#define MAX_NOTAS 2
+
+#define MAX_NOTAS 10
 
 
-//Estructura Local
 typedef struct
 {
     char asignatura[25];
@@ -92,7 +91,6 @@ void menu()
     
 }
 
-
 /*
     Funcion Registro
 */
@@ -116,13 +114,13 @@ void registro()
         printf("\nNombre de la Asignatura: ");
         scanf("%s", &asignatura);
 
-        printf("\n Nota 1: ");
+        printf(" Nota 1: ");
         scanf("%d", &notaOne);
-        printf("\n Nota 2: ");
+        printf(" Nota 2: ");
         scanf("%d", &notaTwo);
-        printf("\n Nota 3: ");
+        printf(" Nota 3: ");
         scanf("%d", &notaThree);
-        printf("\n Nota 4: ");
+        printf(" Nota 4: ");
         scanf("%d", &notaFour);
 
         fprintf(archivo, "Asignatura: %s\n", asignatura);
@@ -154,7 +152,22 @@ void registro()
 */
 void mostrar() 
 {
+    FILE *archivo = fopen("registro_notas.txt", "r");
 
+    if(archivo == NULL) {
+        printf("No se pudo abrir el archivo o no existen registros.\n");
+        return;
+    }
+
+    char linea[100];
+
+    printf("Registros gurados en el archivo:\n\n");
+
+    while(fgets(linea, sizeof(linea), archivo)) {
+        printf("%s", linea);
+    }
+
+    fclose(archivo);
 }
 
 /*
@@ -162,6 +175,15 @@ void mostrar()
 */
 void borrar() 
 {
+    FILE *archivo = fopen("registro_notas.txt", "w");
 
+    if(archivo == NULL) {
+        printf("No se pudo abrir el archivo o no existen registros.\n");
+        return;
+    }
+
+    fclose(archivo);
+
+    printf("Todos los registro han sido eliminados del archivo.\n");
 }
 
