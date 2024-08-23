@@ -9,44 +9,60 @@ Una funcion que permita borrar los datos del archivo.
 #include <stdio.h>
 #include <string.h>
 
+//Constante Para las asignaturas
+#define MAX_NOTAS 2
 
 
-// Estructura de Alumnos
-typedef struct 
+//Estructura Local
+typedef struct
 {
-    char nombre[50];
-    char apellido[50];
-    int edad;
-    char curso[50];
-} Alumno;
+    char asignatura[25];
+    int notaOne;
+    int notaTwo;
+    int notaThree;
+    int notaFour;
+} Notas;
 
-// Declaración de Funciones
+
+//Arreglo Global Asignaturas
+Notas asignaturas[MAX_NOTAS];
+
+//Contador
+int contadorAsignaturas = 0;
+
+
+//Declaracion de Funciones
 void menu();
 void registro();
 void mostrar();
 void borrar();
 
-// Main
-int main ()
+
+//Main
+int main() 
 {
     menu();
     return 0;
 }
 
-// Funciones
-// Función Menu Principal
+
+//Funciones
+/*
+    Menu Principal
+*/
 void menu()
 {
     int i;
-    printf("Bienvenido al Sistema de Registro de Alumnos. \n");
-    printf("Dentro de este Sistema podrá realizar las siguientes acciones. \n");
-    printf("Ingrese el numero de la opcion que desea utilizar. \n");
+    printf("Bienvenidos, dentro de este sistema podra registrar 2 asignaturas,\n");
+    printf("Junto a sus 4 notas obtenidas,\n");
+    printf("Tambien podra realizar las siguientes acciones.\n");
+
     do
     {
-        printf("\n1. Registrar Alumno Nuevo y Almacenarlo en un Archivo de Texto\n");
-        printf("2. Mostrar los Alumnos Registrados dentro del Archivo de Texto.\n");
-        printf("3. Borrar los Datos Almacenados dentro del Archivo de Texto.\n");
-        printf("4. Salir del Sistema de Registro de Alumnos. \n");
+        printf("\n1 - Registrar Notas.\n");
+        printf("2 - Mostrar Notas.\n");
+        printf("3 - Borrar los datos registrados.\n");
+        printf("4 - Salir del Sistema de Registro.\n");
         scanf("%i", &i);
 
         switch (i)
@@ -64,63 +80,85 @@ void menu()
             break;
 
         case 4:
-            printf("\nAcaba de Salir Correctamente del Sistema de Registro\n");
+            printf("\n Acaba de Salir Correctamente del Sistema\n");
             break;
         
         default:
-            printf("\n Opción no válida, inténtelo de nuevo \n");
+            printf("\n Opcion no validad Intentelo de nuevo \n");
             break;
         }
+
     } while (i != 4);
+    
 }
 
 
-
-
-// Función de Registro
 /*
-Esta función cumple con el objetivo de registrar un alumno nuevo 
+    Funcion Registro
 */
 void registro() 
 {
-    Alumno alumno;
+    char asignatura[25];
+    int notaOne;
+    int notaTwo;
+    int notaThree;
+    int notaFour;
 
-    printf("\nIngrese los siguientes datos paso a paso. \n");
+    FILE *archivo = fopen("registro_notas.txt", "a");
 
-    printf("Nombre del Alumno: ");
-    scanf("%s", alumno.nombre);
+    if(archivo == NULL) {
+        printf("No se pudo abrir el archivo.\n");
+        return;
+    }
 
-    printf("Apellido del Alumno: ");
-    scanf("%s", alumno.apellido);
+    if (contadorAsignaturas < MAX_NOTAS) {
+        printf("Ingrese los datos solicitados a continuacion. \n");
+        printf("\nNombre de la Asignatura: ");
+        scanf("%s", &asignatura);
 
-    printf("Edad del Alumno: ");
-    scanf("%d", &alumno.edad);
+        printf("\n Nota 1: ");
+        scanf("%d", &notaOne);
+        printf("\n Nota 2: ");
+        scanf("%d", &notaTwo);
+        printf("\n Nota 3: ");
+        scanf("%d", &notaThree);
+        printf("\n Nota 4: ");
+        scanf("%d", &notaFour);
 
-    printf("Curso del Alumno: ");
-    scanf("%s", alumno.curso);
+        fprintf(archivo, "Asignatura: %s\n", asignatura);
+        fprintf(archivo, "Nota 1: %d\n", notaOne);
+        fprintf(archivo, "Nota 2: %d\n", notaTwo);
+        fprintf(archivo, "Nota 3: %d\n", notaThree);
+        fprintf(archivo, "Nota 4: %d\n", notaFour);
+        fprintf(archivo, "--------------------\n");
 
-    // Aquí puedes añadir código para guardar los datos en un archivo o almacenarlos en una lista
-    printf("\nRegistro Completo: \n");
-    printf("Nombre: %s\n", alumno.nombre);
-    printf("Apellido: %s\n", alumno.apellido);
-    printf("Edad: %d\n", alumno.edad);
-    printf("Curso: %s\n", alumno.curso); 
+        strcpy(asignaturas[contadorAsignaturas].asignatura, asignatura);
+        asignaturas[contadorAsignaturas].notaOne = notaOne;
+        asignaturas[contadorAsignaturas].notaTwo = notaTwo;
+        asignaturas[contadorAsignaturas].notaThree = notaThree;
+        asignaturas[contadorAsignaturas].notaFour = notaFour;
+
+        contadorAsignaturas++;
+
+        printf("Los datos se han registrado correctamente.\n");
+    } else {
+        printf("No se pueden Registrar mas Notas. \n");
+    }
+
+    fclose(archivo);
 
 }
 
-//Funcion de Mostrar
 /*
-
+    Funcion Mostrar
 */
 void mostrar() 
 {
 
 }
 
-
-//Funcion de Borrar
 /*
-
+    Funcion Borrar
 */
 void borrar() 
 {

@@ -1,0 +1,6 @@
+Asignatura: Calculo
+Nota 1: 50
+Nota 2: 50
+Nota 3: 50
+Nota 4: 50
+--------------------
