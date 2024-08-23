@@ -1,11 +1,4 @@
 
-/*
-Crear una Interfaz de consola que solicite al usuario ingresar datos para ser guardados en un archivo de texto.
-Una opcion para mostrar los datos almacendos en el archivo de texto en consola
-Una funcion que permita guardas los datos introducidos por el usuario en el archivo de texto
-Una funcion que permita borrar los datos del archivo.
-*/
-
 #include <stdio.h>
 #include <string.h>
 
@@ -48,6 +41,7 @@ int main()
 //Funciones
 /*
     Menu Principal
+    Muestra las opciones a las cuales puede acceder el usuario.
 */
 void menu()
 {
@@ -93,6 +87,7 @@ void menu()
 
 /*
     Funcion Registro
+    Otorgar la opcion al usuario poder registrar una asignatura y 4 notas obtenidas dentro de esta.
 */
 void registro() 
 {
@@ -149,6 +144,7 @@ void registro()
 
 /*
     Funcion Mostrar
+    Permite al usuario visualizar las notas registradas o indicar si no existen registros dentro del archivo.
 */
 void mostrar() 
 {
@@ -172,6 +168,7 @@ void mostrar()
 
 /*
     Funcion Borrar
+    Permite al usuario eliminar todos los registros almacenados dentro del archivo.
 */
 void borrar() 
 {
