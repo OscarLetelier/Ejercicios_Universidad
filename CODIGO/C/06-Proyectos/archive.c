@@ -181,6 +181,6 @@ void borrar()
 
     fclose(archivo);
 
-    printf("Todos los registro han sido eliminados del archivo.\n");
+    printf("Todos los registro han sido eliminados del archivo Probando.\n");
 }
 
