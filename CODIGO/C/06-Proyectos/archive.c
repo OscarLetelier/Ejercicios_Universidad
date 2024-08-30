@@ -96,6 +96,7 @@ void registro()
     int notaTwo;
     int notaThree;
     int notaFour;
+    int proM;
 
     FILE *archivo = fopen("registro_notas.txt", "a");
 
@@ -108,7 +109,6 @@ void registro()
         printf("Ingrese los datos solicitados a continuacion. \n");
         printf("\nNombre de la Asignatura: ");
         scanf("%s", &asignatura);
-
         printf(" Nota 1: ");
         scanf("%d", &notaOne);
         printf(" Nota 2: ");
@@ -118,11 +118,14 @@ void registro()
         printf(" Nota 4: ");
         scanf("%d", &notaFour);
 
+        proM = ((notaOne + notaTwo + notaThree + notaFour) / 4); //Calcula el promedio de notas obtenido del total de 4 notas registradas.
+
         fprintf(archivo, "Asignatura: %s\n", asignatura);
         fprintf(archivo, "Nota 1: %d\n", notaOne);
         fprintf(archivo, "Nota 2: %d\n", notaTwo);
         fprintf(archivo, "Nota 3: %d\n", notaThree);
         fprintf(archivo, "Nota 4: %d\n", notaFour);
+        fprintf(archivo, "Promedio: %d\n", proM);
         fprintf(archivo, "--------------------\n");
 
         strcpy(asignaturas[contadorAsignaturas].asignatura, asignatura);

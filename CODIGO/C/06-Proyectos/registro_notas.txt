@@ -4,3 +4,35 @@ Nota 2: 10
 Nota 3: 10
 Nota 4: 20
 --------------------
+Asignatura: Mate
+Nota 1: 50
+Nota 2: 50
+Nota 3: 50
+Nota 4: 50
+--------------------
+Asignatura: Cal
+Nota 1: 41
+Nota 2: 25
+Nota 3: 64
+Nota 4: 57
+--------------------
+Asignatura: Lj
+Nota 1: 85
+Nota 2: 45
+Nota 3: 34
+Nota 4: 64
+--------------------
+Asignatura: cal
+Nota 1: 40
+Nota 2: 40
+Nota 3: 40
+Nota 4: 40
+Promedio: 40
+--------------------
+Asignatura: 50
+Nota 1: 51
+Nota 2: 52
+Nota 3: 33
+Nota 4: 19
+Promedio: 38
+--------------------
