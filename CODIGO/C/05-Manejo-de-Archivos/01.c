@@ -1,4 +1,0 @@
-/*
-Escribe un programa que lea el contenido de un archivo
-de texto y lo imprima en la consola.
-*/
