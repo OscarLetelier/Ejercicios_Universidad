@@ -187,3 +187,12 @@ void borrar()
     printf("Todos los registro han sido eliminados del archivo Probando.\n");
 }
 
+
+/*
+    Función Calcular Promedio
+    Permite calcular el promedio de notas ingresado por el usuario.
+*/
+void calculoPromedio() 
+{
+
+}
